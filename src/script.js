@@ -181,7 +181,7 @@ scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
+controls.enableDamping = true
 controls.maxPolarAngle = Math.PI / 2;
 // Disable pan and zoom
 controls.enablePan = false;
