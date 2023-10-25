@@ -5,10 +5,11 @@ To build a simple camera spring arm system using Three.js. This system ensures t
 
 ## Installation
 
-# Install dependencies (only the first time)
+### Install dependencies (only the first time)
 ``` bash
 npm install
 
-# Run the local server
+### Run the local server
+``` bash
 npm run dev
 
