@@ -1,16 +1,21 @@
-# Three.js Journey
+# Camera Spring Arm System
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+## Aim
+To build a simple camera spring arm system using Three.js. This system ensures that the camera maintains an unobstructed view of the player model amidst a scene filled with various obstacles, without any manual input apart from initial orbiting by the user.
 
+### Installation
+
+## Clone the repository to your local machine
 ``` bash
-# Install dependencies (only the first time)
+git clone https://github.com/Abhinav-3009/Camera-Spring-Arm-System.git
+```
+
+## Install dependencies (only the first time)
+``` bash
 npm install
+```
 
-# Run the local server at localhost:8080
+## Run the local server
+``` bash
 npm run dev
-
-# Build for production in the dist/ directory
-npm run build
 ```
