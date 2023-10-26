@@ -19,3 +19,8 @@ npm install
 ``` bash
 npm run dev
 ```
+
+## Output video for reference
+
+https://github.com/Abhinav-3009/Camera-Spring-Arm-System/assets/67754186/842172c5-4957-43cd-af98-4ba913d069a9
+
