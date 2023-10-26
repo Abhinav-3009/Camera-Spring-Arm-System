@@ -8,6 +8,7 @@ const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
 }
+const obstaclesArray = [] // all the objects to be identified as obstacle will be stored in this array
 
 
 /**
@@ -28,10 +29,10 @@ function addGround() {
  * function to add player model(capsule) to the scene
  */
 function addCapsule() {
-/**
- * adding capsule on the ground.
- * to create capsule we need one cylinder and two hemispheres
- */
+    /**
+     * adding capsule on the ground.
+     * to create capsule we need one cylinder and two hemispheres
+     */
 
     //adding geometry for all three parts of capsule
     const capsuleGeometry = new THREE.CylinderGeometry(1, 1, 2, 32)
@@ -156,6 +157,7 @@ const scene = new THREE.Scene()
 //add ground to the scene
 const ground = addGround()
 scene.add(ground)
+obstaclesArray.push(ground)
 
 
 //add capsule to the scene
@@ -168,7 +170,6 @@ createLights()
 
 
 //add walls to the scene
-const obstaclesArray = [] // all the objects to be identified as obstacle will be stored in this array
 const wallHeight = 10
 const wallGeometry = new THREE.BoxGeometry(1, wallHeight, 5)
 const wallMaterial = new THREE.MeshLambertMaterial({ color: '#BA5624' })
@@ -199,7 +200,7 @@ createWall(-10, 12.5, Math.PI / 2)
 
 
 // Camera
-const camera = new THREE.PerspectiveCamera(65, sizes.width / sizes.height, 2, 100)
+const camera = new THREE.PerspectiveCamera(65, sizes.width / sizes.height, 1, 100)
 camera.position.z = 10
 camera.position.x = 0
 camera.position.y = 4
@@ -210,7 +211,7 @@ scene.add(camera)
 // adding orbit controls to camera
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
-controls.maxPolarAngle = Math.PI / 2
+// controls.maxPolarAngle = Math.PI / 2
 
 // Disable pan and zoom
 controls.enablePan = false
@@ -223,6 +224,7 @@ const renderer = new THREE.WebGLRenderer({
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
 
 /**
  * function that will run in each frame, check for obstacles and update controls to look at the capsule
